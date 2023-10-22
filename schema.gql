@@ -3,6 +3,21 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+"""
+The javascript `Date` as string. Type represents date and time as the ISO Date string.
+"""
+scalar DateTime
+
+type Mutation {
+  createUser(name: String!): User!
+}
+
 type Query {
-  users: String!
+  users: [User!]!
+}
+
+type User {
+  birthdate: DateTime!
+  id: ID!
+  name: String!
 }

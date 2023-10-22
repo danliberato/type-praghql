@@ -1,1 +1,26 @@
-version: '3'
+version: "3"
+services:
+  mongo:
+      image: mongo
+      container_name: local-mongo
+      environment:
+        MONGO_INITDB_DATABASE: nfa-locolibs
+      expose:
+        - '27017'
+      ports:
+        - '27017:27017'
+      entrypoint: [ "/usr/bin/mongod", "--bind_ip_all"]
+  # mongo-seed:
+  #   image: mongo
+  #   environment:
+  #     - MONGODB_HOST=mongodb://local-mongo:27017/User
+  #   volumes:
+  #     - ./config/db-seed:/data
+  #   depends_on:
+  #     - mongo
+  #   entrypoint: [
+  #     "/data/load_data.sh"
+  #   ]
+
+volumes:
+  MONGO_DATA:

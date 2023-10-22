@@ -3,7 +3,7 @@ import "reflect-metadata";
 import { ApolloServer } from 'apollo-server';
 import path from 'path';
 import { buildSchema } from 'type-graphql';
-import { UserResolver } from "./src/resolvers/UserResolver";
+import { UserResolver } from "./src/resolvers/resolver.user";
 
 async function main() {
     const schema = await buildSchema({
